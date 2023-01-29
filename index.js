@@ -1,6 +1,5 @@
 const express = require("express");
 const { connection } = require("./configs/db");
-const cors = require('cors')
 const { UserModel } = require("./models/usersmodel");
 const jwt = require("jsonwebtoken");
 const { iitRouter } = require("./routes/iitRoutes");
@@ -11,11 +10,6 @@ const { upscRouter } = require("./routes/upscRoutes");
 const { sscRouter } = require("./routes/sscRoutes");
 
 const app = express();
-
-app.use(cors({
-  origin: "*"
-}))
-
 app.use(express.json());
 
 app.get("/", (req, res) => {
